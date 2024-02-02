@@ -57,7 +57,7 @@ const AddMovie = () => {
             name="title"
             variant="standard"
             margin="normal"
-          ></TextField>
+          />
           <FormLabel sx={labelProps}>Description</FormLabel>
           <TextField
             value={inputs.description}
@@ -65,7 +65,7 @@ const AddMovie = () => {
             name="description"
             variant="standard"
             margin="normal"
-          ></TextField>
+          />
           <FormLabel sx={labelProps}>Poster Url</FormLabel>
           <TextField
             value={inputs.posterUrl}
@@ -73,7 +73,7 @@ const AddMovie = () => {
             name="posterUrl"
             variant="standard"
             margin="normal"
-          ></TextField>
+          />
           <FormLabel sx={labelProps}>Release Date</FormLabel>
           <TextField
             type="date"
@@ -82,7 +82,7 @@ const AddMovie = () => {
             name="releaseDate"
             variant="standard"
             margin="normal"
-          ></TextField>
+          />
           <FormLabel sx={labelProps}>Actor</FormLabel>
           <Box display={"flex"}>
             <TextField
@@ -91,7 +91,7 @@ const AddMovie = () => {
               onChange={(e) => setActor(e.target.value)}
               variant="standard"
               margin="normal"
-            ></TextField>
+            />
             <Button
               onClick={() => {
                 setActors([...actors, actor]);
