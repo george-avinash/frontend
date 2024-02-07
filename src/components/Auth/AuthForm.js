@@ -47,7 +47,7 @@ const AuthForm = ({ onSubmit, isAdmin }) => {
           justifyContent={"center"}
           flexDirection={"column"}
           width={400}
-          margin={"auto"}
+          margin="auto"
           alignItems={"center"}
         >
           {!isAdmin && isSignup && (
@@ -59,7 +59,7 @@ const AuthForm = ({ onSubmit, isAdmin }) => {
                 onChange={handleChange}
                 margin="normal"
                 variant="standard"
-                type={"name"}
+                type={"text"}
                 name="name"
               />
             </>
@@ -94,7 +94,6 @@ const AuthForm = ({ onSubmit, isAdmin }) => {
             <Button
               onClick={() => setIsSignup(!isSignup)}
               sx={{ mt: 2, borderRadius: 10 }}
-              type="submit"
               fullwidth
             >
               Switch To {isSignup ? "Login" : "Signup"}

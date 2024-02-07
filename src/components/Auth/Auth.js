@@ -1,6 +1,6 @@
 import React from "react";
 import AuthForm from "./AuthForm";
-import { sendUserAuthRequest } from "../api-helpers/api-helpers";
+import { sendUserAuthRequest } from "../../api-helpers/api-helpers";
 import { useDispatch } from "react-redux";
 import { userActions } from "../../store";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,7 @@ const Auth = () => {
     navigate("/");
   };
   const getData = (data) => {
-    console.log("Auth", data);
+    console.log(data);
     sendUserAuthRequest(data.inputs, data.signup)
       .then(onResReceived)
       .catch((err) => console.log(err));

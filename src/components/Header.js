@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Autocomplete,
-  Box,
   IconButton,
   Tab,
   Tabs,
   TextField,
   Toolbar,
 } from "@mui/material";
+import { Box } from "@mui/system";
 import { Link, useNavigate } from "react-router-dom";
 import MovieIcon from "@mui/icons-material/Movie";
-import { getAllMovies } from "./api-helpers/api-helpers";
+import { getAllMovies } from "../api-helpers/api-helpers";
 import { useDispatch, useSelector } from "react-redux";
 import { adminActions, userActions } from "../store";
 

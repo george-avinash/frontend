@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { addMovie } from "../api-helpers/api-helpers";
+import { addMovie } from "../../api-helpers/api-helpers";
 const labelProps = {
   mt: 1,
   mb: 1,
@@ -42,9 +42,9 @@ const AddMovie = () => {
         <Box
           width={"50%"}
           padding={10}
-          margin={"auto"}
+          margin="auto"
           display={"flex"}
-          flexDirection={"column"}
+          flexDirection="column"
           boxShadow={"10px 10px 20px #ccc"}
         >
           <Typography textAlign={"center"} fontFamily={"verdana"} variant="h5">

@@ -14,6 +14,7 @@ import { adminLogin, sendAuthRequest } from "../../helpers/api-helpers";
 import { useDispatch } from "react-redux";
 import { adminActions } from "../../store/admin-slice";
 const labelSx = { marginRight: "auto", mt: 1, mb: 1 };
+
 const AdminAuth = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

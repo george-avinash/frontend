@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getMovieDetails, newBooking } from "../api-helpers/api-helpers";
-import { Box, Button, FormLabel, TextField, Typography } from "@mui/material";
+import { getMovieDetails, newBooking } from "../../api-helpers/api-helpers";
+import { Button, FormLabel, TextField, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 const Booking = () => {
   const [movie, setMovie] = useState();
@@ -33,7 +34,7 @@ const Booking = () => {
         <Fragment>
           <Typography
             padding={3}
-            fontFamily={"fantasy"}
+            fontFamily="fantasy"
             variant="h4"
             textAlign={"center"}
           >
@@ -43,13 +44,13 @@ const Booking = () => {
             <Box
               display={"flex"}
               justifyContent={"coloum"}
-              flexDirection={"column"}
+              flexDirection="column"
               paddingTop={3}
-              width={"50%"}
+              width="50%"
               marginRight={"auto"}
             >
               <img
-                width={"80%"}
+                width="80%"
                 height={"300px"}
                 src={movie.posterUrl}
                 alt={movie.title}
@@ -69,15 +70,15 @@ const Booking = () => {
                 <Box
                   padding={5}
                   margin={"auto"}
-                  display={"flex"}
+                  display="flex"
                   flexDirection={"column"}
                 >
                   <FormLabel>Seat Number</FormLabel>
                   <TextField
+                    name="seatNumber"
                     value={inputs.seatNumber}
                     onChange={handleChange}
-                    name="seatNumber"
-                    type="number"
+                    type={"number"}
                     margin="normal"
                     variant="standard"
                   />

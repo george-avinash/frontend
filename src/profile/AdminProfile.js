@@ -1,18 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
-import {
-  getAdminById,
-} from "../components/api-helpers/api-helpers";
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { getAdminById } from "../api-helpers/api-helpers";
+import { Box } from "@mui/system";
+import { List, ListItem, ListItemText, Typography } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const AdminProfile = () => {
-  
   const [admin, setAdmin] = useState();
   useEffect(() => {
     getAdminById()
@@ -27,7 +19,7 @@ const AdminProfile = () => {
         {admin && (
           <Box
             flexDirection={"column"}
-            justifyContent={"center"}
+            justifyContent="center"
             alignItems={"center"}
             width={"30%"}
             padding={3}
@@ -43,50 +35,47 @@ const AdminProfile = () => {
               border={"1px solid #ccc"}
               borderRadius={6}
             >
-              Email:{admin.email}
+              Email: {admin.email}
             </Typography>
           </Box>
         )}
-        {admin && admin.addedMovies.length > 0 &&
-          (
-            <Box width={"70%"} display="flex" flexDirection={"column"}>
-              <Typography
-                variant="h3"
-                fontFamily={"verdana"}
-                textAlign={"center"}
-                padding={2}
-              >
-                Added Movies
-              </Typography>
-              <Box
-                margin={"auto"}
-                display={"flex"}
-                flexDirection={"column"}
-                width={"80%"}
-              >
-                <List>
-                  {admin.addedMovies.map((movie, index) => (
-                    <ListItem
-                      sx={{
-                        bgcolor: "#00d386",
-                        color: "white",
-                        textAlign: "center",
-                        margin: 1,
-                      }}
+        {admin && admin.addedMovies.length > 0 && (
+          <Box width={"70%"} display="flex" flexDirection={"column"}>
+            <Typography
+              variant="h3"
+              fontFamily={"verdana"}
+              textAlign="center"
+              padding={2}
+            >
+              Added Movies
+            </Typography>
+            <Box
+              margin={"auto"}
+              display={"flex"}
+              flexDirection={"column"}
+              width={"80%"}
+            >
+              <List>
+                {admin.addedMovies.map((movie, index) => (
+                  <ListItem
+                    sx={{
+                      bgcolor: "#00d386",
+                      color: "white",
+                      textAlign: "center",
+                      margin: 1,
+                    }}
+                  >
+                    <ListItemText
+                      sx={{ margin: 1, width: "auto", tecxtAlign: "left" }}
                     >
-                      <ListItemText
-                        sx={{ margin: 1, width: "auto", tecxtAlign: "left" }}
-                      >
-                        Movie:{movie.title}
-                      </ListItemText>
-                     
-                      
-                    </ListItem>
-                  ))}
-                </List>
-              </Box>
+                      Movie:{movie.title}
+                    </ListItemText>
+                  </ListItem>
+                ))}
+              </List>
             </Box>
-          )}
+          </Box>
+        )}
       </Fragment>
     </Box>
   );

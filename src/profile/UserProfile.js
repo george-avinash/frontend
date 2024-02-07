@@ -3,9 +3,9 @@ import {
   deleteBooking,
   getUserBooking,
   getUserDetails,
-} from "../components/api-helpers/api-helpers";
+} from "../api-helpers/api-helpers";
+import { Box } from "@mui/system";
 import {
-  Box,
   IconButton,
   List,
   ListItem,
@@ -14,7 +14,6 @@ import {
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-
 
 const UserProfile = () => {
   const [bookings, setBookings] = useState();
@@ -40,7 +39,7 @@ const UserProfile = () => {
         {user && (
           <Box
             flexDirection={"column"}
-            justifyContent={"center"}
+            justifyContent="center"
             alignItems={"center"}
             width={"30%"}
             padding={3}
@@ -69,25 +68,24 @@ const UserProfile = () => {
             </Typography>
           </Box>
         )}
-        {bookings &&
-          (
-            <Box width={"70%"} display="flex" flexDirection={"column"}>
-              <Typography
-                variant="h3"
-                fontFamily={"verdana"}
-                textAlign={"center"}
-                padding={2}
-              >
-                Bookings
-              </Typography>
-              <Box
-                margin={"auto"}
-                display={"flex"}
-                flexDirection={"column"}
-                width={"80%"}
-              >
-                <List>
-                  {bookings && bookings.map((booking, index) => (
+        {bookings && (
+          <Box width={"70%"} display="flex" flexDirection={"column"}>
+            <Typography
+              variant="h3"
+              fontFamily={"verdana"}
+              textAlign="center"
+              padding={2}
+            >
+              Bookings
+            </Typography>
+            <Box
+              margin={"auto"}
+              display="flex"
+              flexDirection={"column"}
+              width="80%"
+            >
+              <List>
+                {bookings.map((booking, index) => (
                     <ListItem
                       sx={{
                         bgcolor: "#00d386",
@@ -97,17 +95,17 @@ const UserProfile = () => {
                       }}
                     >
                       <ListItemText
-                        sx={{ margin: 1, width: "auto", tecxtAlign: "left" }}
+                        sx={{ margin: 1, width: "auto", textAlign: "left" }}
                       >
-                        Movie:{booking.title}
+                        Movie:{booking.movie.title}
                       </ListItemText>
                       <ListItemText
-                        sx={{ margin: 1, width: "auto", tecxtAlign: "left" }}
+                        sx={{ margin: 1, width: "auto", textAlign: "left" }}
                       >
                         Seat:{booking.seatNumber}
                       </ListItemText>
                       <ListItemText
-                        sx={{ margin: 1, width: "auto", tecxtAlign: "left" }}
+                        sx={{ margin: 1, width: "auto", textAlign: "left" }}
                       >
                         Date:{new Date(booking.date).toDateString()}
                       </ListItemText>
@@ -119,10 +117,10 @@ const UserProfile = () => {
                       </IconButton>
                     </ListItem>
                   ))}
-                </List>
-              </Box>
+              </List>
             </Box>
-          )}
+          </Box>
+        )}
       </Fragment>
     </Box>
   );

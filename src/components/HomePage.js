@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import MovieItem from "./Movies/MovieItem";
 import { Link } from "react-router-dom";
-import { getAllMovies } from "./api-helpers/api-helpers";
+import { getAllMovies } from "../api-helpers/api-helpers";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -13,8 +13,8 @@ const HomePage = () => {
   }, []);
   //   console.log(movies);
   return (
-    <Box width={"100%"} height={"100%"} margin={"auto"} marginTop={2}>
-      <Box margin={"auto"} width={"80%"} height={"40vh"} padding={2}>
+    <Box width={"100%"} height="100%" margin="auto" marginTop={2}>
+      <Box margin={"auto"} width="80%" height={"40vh"} padding={2}>
         <img
           src="https://assets-in.bmscdn.com/discovery-catalog/events/et00361924-qbkmjrbczq-landscape.jpg"
           alt="Eagle"
@@ -22,19 +22,18 @@ const HomePage = () => {
           height={"100%"}
         />
       </Box>
-      <Box padding={5} margin={"auto"}>
+      <Box padding={5} margin="auto">
         <Typography variant="h4" textAlign={"center"}>
-          {" "}
           Latest Releases
         </Typography>
       </Box>
       <Box
         margin={"auto"}
-        display={"flex"}
-        width={"80%"}
+        display="flex"
+        width="80%"
         justifyContent={"center"}
-        alignItems={"center"}
-        flexWrap={"wrap"}
+        alignItems="center"
+        flexWrap="wrap"
       >
         {movies &&
           movies
@@ -49,7 +48,7 @@ const HomePage = () => {
               />
             ))}
       </Box>
-      <Box display={"flex"} padding={5} margin={"auto"}>
+      <Box display="flex" padding={5} margin="auto">
         <Button
           LinkComponent={Link}
           to="/movies"

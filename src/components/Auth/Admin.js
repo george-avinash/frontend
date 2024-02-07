@@ -1,6 +1,6 @@
 import React from "react";
-import AuthForm from "../Auth/AuthForm";
-import { sendAdminAuthRequest } from "../api-helpers/api-helpers";
+import AuthForm from "./AuthForm";
+import { sendAdminAuthRequest } from "../../api-helpers/api-helpers";
 import { useDispatch } from "react-redux";
 import { adminActions } from "../../store";
 import { useNavigate } from "react-router-dom";
