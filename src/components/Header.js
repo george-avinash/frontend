@@ -34,7 +34,7 @@ const Header = () => {
     const movie = movies.find((m) => m.title === val);
     console.log(movie);
     if(isUserLoggedIn){
-        navigate(`/booking/${movie._id}`);
+        navigate(`/booking/${movie.id}`);
     }
   };
   return (
